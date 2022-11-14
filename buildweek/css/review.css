@@ -30,3 +30,7 @@ h1{
 p{
     font-size: 1.4rem;
 }
+
+.svg path:hover{
+    fill: rgb(17, 2, 71);
+}
