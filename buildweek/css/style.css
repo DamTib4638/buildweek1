@@ -30,7 +30,7 @@ h1 {
     line-height: 3rem;
 }
 
-h1 > span {
+span {
     font-weight: 700;
 }
 
@@ -72,20 +72,22 @@ ul > li {
 
 .shadow{
     position: relative;
-    margin: 20px auto;
+    /* margin: 20px auto; */
     width: 150px;
     height: 50px;
     /* background: linear-gradient(0deg,#00ffff); */
     background-color: #00ffff;
     display: inline-block;
-    text-align: center;
+    /* text-align: center; */
+    float: right;
 }
 .shadow a {
     text-decoration: none;
-    padding: 20px 40px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
     color: #0b113b;
     font-weight: 700;
-    
 }
 .shadow::before,
 .shadow::after{
