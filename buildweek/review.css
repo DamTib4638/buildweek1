@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap');
+
+body, html {
+    height: 100%;
+    color: white;
+}
+
+body{
+    background-image: url(../Assets/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 22px 80px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+#logo {
+    width: 10%;
+}
+
+main{
+    text-align: center;
+}
+
+h1{
+    font-family: 'Outfit', sans-serif;
+}
+
+p{
+    font-size: 1.4rem;
+}
