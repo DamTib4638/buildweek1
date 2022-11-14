@@ -146,3 +146,36 @@ input[type=checkbox] {
         background-position: 0 0;
     }
 }
+#tempo{
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    right: 29px;
+}
+#centro{
+    text-align: center;
+    padding: 0;
+    margin-top: 173px;
+    margin-bottom: 58px;
+    line-height: 1em;
+}
+.container{
+    display: grid;
+    grid-template-columns:auto auto;
+    max-width: auto;
+}
+.item{
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    text-align: center;
+    margin: 30px;
+    border-radius: 50px;
+    height: 75px;
+}
+.item p{
+    text-align: center;
+}
+#domande {
+    margin: auto;
+    margin-top: 160px;
+    text-align: center;
+}
