@@ -48,6 +48,10 @@ p{
     fill: #00FFFF
 }
 
+.path{
+    fill: #00FFFF
+}
+
 input {
     background: transparent;
     border: none;
