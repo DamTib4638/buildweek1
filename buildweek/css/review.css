@@ -74,11 +74,15 @@ input:focus{
     /* background: linear-gradient(0deg,#00ffff); */
     background-color: #00ffff;
      text-align: center; 
-     padding-top: 15px;
-     padding-bottom: 15px;
+     font-size: 1.22rem;
+     font-weight: 800;
+     padding-top: 13px;
+     padding-bottom: 13px;
+     padding-left: 20px;
+     padding-right: 20px;
      margin-right: 210px;
     margin: 0 auto;
-    margin-top: 45px;
+    margin-top: 50px;
 }
 .shadow a {
     text-decoration: none;
