@@ -47,27 +47,56 @@ ul > li {
     line-height: 1.5rem;
 }
 
-#form-welcome {
-    margin-left: 0;
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* #check-welcome {
-    width: 20px;
-    height: 20px;
+.main {
+    position: relative;
+    padding-left: 45px;
     cursor: pointer;
-} */
-
-#check {
-    border: 3px solid white;
-    display: inline-block;
-    width: 15px;
-    height: 15px;
 }
 
-#p-footer {
-    display: inline-block;
-    padding-left: 10px;
-    padding-bottom: 5px;
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+.check{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 2px solid white;
+}
+  
+.main input:checked ~ .check {
+    background-color: transparent;
+}
+
+.check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.main .check:after {
+    left: 8px;
+    bottom: 5px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.main input:checked ~ .check:after {
+    display: flex;
 }
 
 .shadow{
