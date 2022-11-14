@@ -25,13 +25,13 @@ main{
 
 h1{
     font-family: 'Outfit', sans-serif;
-    font-size: 3.4rem;
+    font-size: 3.3rem;
     margin-bottom: 20px;
-    margin-top: 37px;
+    margin-top: 32px;
 }
 
 p{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 400;
     margin-top: 20px;
     margin-left: 150px;
@@ -41,6 +41,7 @@ p{
 
 #stelleDiv{
     margin-bottom: 60px;
+    letter-spacing: 20px;
 }
 
 .svg path:hover{
