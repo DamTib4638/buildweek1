@@ -1,32 +1,84 @@
-#tempo{
-    position: absolute;
-    z-index: 1;
-    top: 30px;
-    right: 29px;
-}
-#centro{
-    text-align: center;
+/*nuovo*/
+* {
+    margin: 0;
     padding: 0;
-    margin-top: 173px;
-    margin-bottom: 58px;
-    line-height: 1em;
-}
-.container{
-    display: grid;
-    grid-template-columns:auto auto;
-    max-width: auto;
-}
-.item{
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    text-align: center;
-    margin: 30px;
-    border-radius: 50px;
-    height: 75px;
-}
-.item p{
-    text-align: center;
-}
-#domande {
-    margin: auto;
-    margin-top: 160px;
-}
+    }
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items:center;
+    }
+    .main-progetto{
+        width: 100vw;
+        height: 100vh;
+        background-color: red;
+    }
+    .main-container {
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        margin-left: 1200px;
+    }
+    
+    /*progress indicator*/
+    .circle-container{
+        width: 200px;
+        height: 200px;
+        background-color:#ddd;
+        border-radius: 50%;
+        position:absolute;
+        overflow: hidden;
+        z-index: 1;
+        right: 80px;
+        top: 50px;
+    }
+    .semicircle{
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-origin: right center;
+    }
+    .semicircle:nth-child(1){
+        background-color: #088b8b;
+        z-index: 2;
+    }
+    .semicircle:nth-child(2){
+        background-color: #088b8b;
+        z-index: 3;
+    }
+    .semicircle:nth-child(3){
+        background-color: #ddd;
+        z-index: 4;
+    }
+    .outermost-circle{
+        width: 190px;
+        height: 190px;
+        background-color: white;
+        border-radius: 50%;
+        z-index: 5;
+    }
+    
+    /*timer*/
+    
+    .timer-container{
+        width: 100px;
+        height: 100px;
+        z-index: 6;
+    }
+    timer{
+        width: 80px;
+        height: 80px;
+        z-index: 7;
+    }
+    .timer div{
+        font-size: 70px;
+        font-weight:100;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px 0 10px;
+    }
