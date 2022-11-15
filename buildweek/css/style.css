@@ -167,9 +167,11 @@ input[type=checkbox] {
 .item{
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     text-align: center;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    padding-left: 8px;
     margin: 30px;
     border-radius: 50px;
-    height: 75px;
 }
 .item p{
     text-align: center;
@@ -178,6 +180,12 @@ input[type=checkbox] {
     margin: auto;
     margin-top: 70px;
     text-align: center;
+}
+.destra{
+    margin-right: 200px;
+}
+.sinistra{
+    margin-left: 200px;
 }
 
 /*nuovo, per timer*/
