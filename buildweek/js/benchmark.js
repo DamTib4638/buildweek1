@@ -2,11 +2,11 @@ const semicircles = document.querySelectorAll('.semicircle');
 
 const timer=document.querySelector('.timer');
 
-console.log(ok);
+console.log('ok');
 //input
 const hr = 0;
 const min = 0;
-const sec = 100;
+const sec = 10;
 
 const hours = hr * 3600000;
 const minutes = min * 60000;
