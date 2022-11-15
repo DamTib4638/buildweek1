@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap');
 
 body, html {
-    height: 100%;
+    
     color: white;
 }
 
@@ -176,6 +176,6 @@ input[type=checkbox] {
 }
 #domande {
     margin: auto;
-    margin-top: 160px;
+    margin-top: 70px;
     text-align: center;
 }
