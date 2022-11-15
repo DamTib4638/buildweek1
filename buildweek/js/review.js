@@ -8,3 +8,17 @@ for (let el of svgs) {
         }
     })
 }*/
+
+/*let svgs = document.querySelectorAll('svg')
+ svgs.forEach((el)=>{
+    el.addEventListener('mouseover', (e)=>{
+        let star = e
+        svgs.forEach((el, i)=>{
+            if(star >= i){
+                el.classList.add('path')
+            } else{
+                el.classList.add('svg')
+            }
+        })
+    })
+})*/

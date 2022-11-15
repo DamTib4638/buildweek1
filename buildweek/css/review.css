@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap');
 
 body, html {
-    color: rgba(255, 255, 255, 0.932);
+    color: rgba(255, 255, 255, 0.884);
 }
 
 body{
@@ -41,14 +41,12 @@ p{
 #stelleDiv{
     margin-bottom: 60px;
     letter-spacing: 20px;
+    font-size: 2.3rem;
 }
 
 .svg path:hover{
-    fill: #00FFFF
-}
-
-.path{
-    fill: #00FFFF
+    fill: #00ffff;
+    transition: 0.2s;
 }
 
 input {
