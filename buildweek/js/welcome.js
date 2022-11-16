@@ -106,6 +106,7 @@ var percentualeRisposteCorrette = 0; // serve in futuro per le percentuali dei r
 var percentualeRisposteSbagliate = 0; // serve in futuro per le percentuali dei risultati
 var traccia = -1;
 var spanFooter = document.createElement('span');
+var controllo=false;
 
 function checkBox(){
 let giulio=document.getElementById('franco')
@@ -245,6 +246,7 @@ if (response === questions[traccia].correct_answer) {
     goToResults();
   } else {
     console.log(score);
+    controllo=true;
     newDomanda();
   }
 } else {
@@ -252,6 +254,7 @@ if (response === questions[traccia].correct_answer) {
     goToResults();
   } else {
     console.log(score);
+    controllo=true;
     newDomanda();
   }
 }
@@ -267,7 +270,20 @@ var countdown = 30;
 
 countdownNumberEl.textContent = countdown;
 
-setInterval(function() {
-  countdown = --countdown <= 0 ? 30 : countdown;
-  countdownNumberEl.textContent = countdown;
-}, 1000);
+function startTimer(){
+  setInterval(function() {
+    /*countdown = --countdown <= 0 ? 30 : countdown;*/
+    if(--countdown<=0 || controllo)
+    {
+      countdown=30;
+      controllo=false;
+      newDomanda();
+    }
+    else{
+      countdown=countdown;
+    }
+    countdownNumberEl.textContent = countdown;
+  }, 1000);
+}
+startTimer();
+

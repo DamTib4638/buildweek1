@@ -1,9 +1,11 @@
 var giuste=8;
-    var sbagliate=2;
+var sbagliate=2;
+
+
   const data = {
     labels: [
-      'Blue',
-      'Purple'
+      'Sbagliate',
+      'Corrette'
     ],
     datasets: [{
       label: 'domande',
