@@ -8,6 +8,11 @@ for (let i = 0; i < 10; i++) {
     starImg.classList.add('star-style')
     contenitore.appendChild(starImg)
 
+    let nextImg = document.createElement('img')
+    nextImg.src = 'Assets/star.svg'
+    nextImg.classList.add('style-style')
+    nextImg.style.transition = '0.4sec'
+
     starImg.addEventListener('mouseover', () =>onStarHover(i))
     starImg.addEventListener('mouseleave', () =>onStarOut())
     starImg.addEventListener('click', () => {
@@ -31,9 +36,9 @@ let stars = document.querySelectorAll(".star-style")
     function fill(ratingVall) {
         for (let i = 0; i < 10; i++) {
             if(i <= ratingVall) {
-                stars[i].src = "Assets/star.svg"
+                stars[i] = nextImg
             }else{
-                stars[i].src = 'Assets/star_dark.svg'
+                stars[i] = starImg
             }
         }
     }
