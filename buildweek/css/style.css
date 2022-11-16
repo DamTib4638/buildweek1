@@ -19,7 +19,7 @@ body{
     width: 10%;
 }
 
-h1, h2 {
+h1, h2, h3 {
     font-family: 'Outfit', sans-serif;
 }
 
@@ -115,6 +115,7 @@ input[type=checkbox] {
     padding-bottom: 10px;
     margin-right: 210px;   
 }
+
 .shadow a {
     text-decoration: none;
     width: 100%;
