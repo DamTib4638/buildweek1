@@ -245,16 +245,19 @@ if (response === questions[traccia].correct_answer) {
   if (serieDomandeCasuali.length === 0) {
     goToResults();
   } else {
-    console.log(score);
     controllo=true;
+    window.localStorage.setItem('rights', JSON.stringify((score)));
+    window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
+
     newDomanda();
   }
 } else {
   if (serieDomandeCasuali.length === 0) {
     goToResults();
   } else {
-    console.log(score);
     controllo=true;
+    window.localStorage.setItem('rights', JSON.stringify((score)));
+    window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
     newDomanda();
   }
 }
