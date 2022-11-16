@@ -1,0 +1,39 @@
+body, html{
+    height: 100%;
+}
+
+h1{
+    padding: 0;
+    margin-bottom: 15px;
+}
+.centro{
+    text-align: center;
+    margin-top: 60px;
+}
+p{
+    font-size: 1.5rem;
+}
+.container{
+    display: grid;
+    grid-template-columns:auto auto auto;
+    max-width: auto;
+    margin-top: 150px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.button{
+width: 150px;
+border: 1px solid white;
+text-align: center; 
+padding-top: 10px;
+padding-bottom: 10px;
+margin: auto;
+width: 180px;
+}
+h3{
+    font-size: 2rem;
+}
