@@ -28,6 +28,7 @@ h1 {
     font-weight: 400;
     padding-right: 70%;
     line-height: 3rem;
+    padding-top: 50px;
 }
 
 span {
@@ -36,11 +37,13 @@ span {
 
 h2 {
     color: #c2128dd7;
+    padding-top: 30px ;
 }
 
 ul {
     padding-left: 22px;
     margin-bottom: 100px;
+    padding-top: 40px;
 }
 
 ul > li {
@@ -62,6 +65,7 @@ input[type=checkbox] {
     visibility: hidden;
 }
 
+
 .check{
     position: absolute;
     top: 0;
@@ -70,6 +74,7 @@ input[type=checkbox] {
     width: 25px;
     background-color: transparent;
     border: 2px solid white;
+    margin-top: -5px;
 }
   
 .main input:checked ~ .check {
@@ -106,9 +111,9 @@ input[type=checkbox] {
     background-color: #00ffff;
     display: inline-block;
     text-align: center; 
-    padding-top: 10px;
+    padding-top:10px;
     padding-bottom: 10px;
-    margin-right: 210px;
+    margin-right: 210px;   
 }
 .shadow a {
     text-decoration: none;
