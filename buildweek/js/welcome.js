@@ -246,9 +246,6 @@ if (response === questions[traccia].correct_answer) {
     goToResults();
   } else {
     controllo=true;
-    window.localStorage.setItem('rights', JSON.stringify((score)));
-    window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
-
     newDomanda();
   }
 } else {
@@ -256,15 +253,15 @@ if (response === questions[traccia].correct_answer) {
     goToResults();
   } else {
     controllo=true;
-    window.localStorage.setItem('rights', JSON.stringify((score)));
-    window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
     newDomanda();
   }
 }
 }
 
 function goToResults() {
-window.location.href = 'results.html';
+  window.localStorage.setItem('rights', JSON.stringify((score)));
+  window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
+  window.location.href = 'results.html';
 }
 
 //per timer
@@ -278,6 +275,19 @@ function startTimer(){
     /*countdown = --countdown <= 0 ? 30 : countdown;*/
     if(--countdown<=0 || controllo)
     {
+      if(controllo)
+      {
+        let myRules = document.styleSheets[0].cssRules;
+        let keyframes = myRules[0]; 
+        console.log(keyframes);
+        keyframes.deleteRule('to');
+        console.log(keyframes.cssRules); 
+
+         myRules = document.styleSheets[0].cssRules;
+         keyframes = myRules[0];
+        keyframes.appendRule('to {stroke-dashoffset: 157px;}');
+        console.log(keyframes.cssRules);
+      }
       countdown=30;
       controllo=false;
       newDomanda();

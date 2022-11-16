@@ -52,7 +52,19 @@ h3{
 }
 /*grafico*/
 .contenitore-grafico{
-    height: 300px;
-    width: 300px;
+    height: 700px;
+    width: 450px;
+    margin: 0 auto;
 
 }
+#span-canvas{
+    margin: 0 auto;
+    position: relative;
+    top: 180px;
+    max-width: 150px;
+}
+/*
+.contenitore-grafico::before{
+  
+}
+*/
