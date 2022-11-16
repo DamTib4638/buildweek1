@@ -124,6 +124,9 @@ input[type=checkbox] {
     color: #0b113b;
     font-weight: 700;
 }
+.shadow a:hover{
+    cursor:pointer;
+}
 .shadow::before,
 .shadow::after{
     content: '';
