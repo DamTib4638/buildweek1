@@ -37,3 +37,9 @@ width: 180px;
 h3{
     font-size: 2rem;
 }
+/*grafico*/
+.contenitore-grafico{
+    height: 300px;
+    width: 300px;
+
+}
