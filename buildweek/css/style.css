@@ -8,7 +8,8 @@ body, html {
 body{
     background-image: url(../Assets/bg.jpg);
     background-repeat: no-repeat;
-    background-position: center;
+   /* background-position: center;*/
+    height: 100vh;
     background-size: cover;
     padding: 22px 80px;
     font-family: 'Inter', sans-serif;

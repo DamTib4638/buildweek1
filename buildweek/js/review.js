@@ -4,7 +4,7 @@ let controllo = true
 
 for (let i = 0; i < 10; i++) {
     let starImg = document.createElement('img')
-    starImg.src ='../Assets/star_dark.svg'
+    starImg.src ='Assets/star_dark.svg'
     starImg.classList.add('star-style')
     contenitore.appendChild(starImg)
 
@@ -31,9 +31,9 @@ let stars = document.querySelectorAll(".star-style")
     function fill(ratingVall) {
         for (let i = 0; i < 10; i++) {
             if(i <= ratingVall) {
-                stars[i].src = "../Assets/star.svg"
+                stars[i].src = "Assets/star.svg"
             }else{
-                stars[i].src = '../Assets/star_dark.svg'
+                stars[i].src = 'Assets/star_dark.svg'
             }
         }
     }
