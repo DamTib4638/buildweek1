@@ -70,7 +70,7 @@ var principale = document.getElementById('principale');
 var secondario = document.getElementById('secondario');
 if (percentualeCorretta >= 60) {
   principale.textContent = 'Congratulations You passed the exam!';
-  secondario.textContent = `We'll send you the certificate in few minutes.Check your email (including promotions / spam folder)`;
+  secondario.innerHTML = "We'll send you the certificate in few minutes.<br> Check your email (including promotions / spam folder)";
 } else {
   principale.textContent = 'Non hai raggiunto la sufficienza!';
   secondario.textContent = `RIvedi le slide e le lezioni registrate in piattaforma`;
