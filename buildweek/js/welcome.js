@@ -106,7 +106,9 @@ var percentualeRisposteCorrette = 0; // serve in futuro per le percentuali dei r
 var percentualeRisposteSbagliate = 0; // serve in futuro per le percentuali dei risultati
 var traccia = -1;
 var spanFooter = document.createElement('span');
-var controllo=false;
+const FULL_DASH_ARRAY = 283;
+//var controllo=false;
+
 
 function checkBox(){
 let giulio=document.getElementById('franco')
@@ -120,7 +122,8 @@ link.setAttribute('href', 'benchmark.html');
 
 window.onload = function () {
 newDomanda();
-startTimer();
+contoAllaRovescia();
+valutaTempo(intertempo);
 }
 
 function sequenzaDomande(numeroDomande) {
@@ -241,68 +244,116 @@ esaminaRisposta(content);
 })
 
 function esaminaRisposta(response) {
-if (response === questions[traccia].correct_answer) {
-  score++;
+  if (response === questions[traccia].correct_answer) {
+    score++;
+    // if (serieDomandeCasuali.length === 0) {
+    //   goToResults();
+    // } else {
+    //   //controllo=true;
+    //   //window.localStorage.setItem('rights', JSON.stringify((score)));
+    //   //window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
+    //   newDomanda();
+    //   //startTimer();
+    // }
+  }
   if (serieDomandeCasuali.length === 0) {
     goToResults();
   } else {
-    controllo=true;
-    window.localStorage.setItem('rights', JSON.stringify((score)));
-    window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
-
     newDomanda();
   }
-} else {
-  if (serieDomandeCasuali.length === 0) {
-    goToResults();
-  } else {
-    controllo=true;
-    window.localStorage.setItem('rights', JSON.stringify((score)));
-    window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
-    newDomanda();
-  }
-}
+  // else {
+  //   if (serieDomandeCasuali.length === 0) {
+  //     goToResults();
+  //   } else {
+  //     //controllo=true;
+  //     //window.localStorage.setItem('rights', JSON.stringify((score)));
+  //     //window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
+  //     newDomanda();
+  //     //startTimer();
+  //   }
+  // }
+  clearInterval(countdown);
+  contoAllaRovescia();
+  intertempo = tempoDomanda;
+  tempoRimasto = tempoDomanda;
+  tempoPassato = 0;
 }
 
 function goToResults() {
+  window.location.href = 'results.html';
   window.localStorage.setItem('rights', JSON.stringify((score)));
   window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
-  window.location.href = 'results.html';
+  window.localStorage.setItem('total', JSON.stringify((raccoltaDomande)));
 }
 
 //per timer
-var countdownNumberEl = document.getElementById('countdown-number');
-var countdown = 30;
 
-countdownNumberEl.textContent = countdown;
+var tempoDomanda = 30;
+var intertempo;
+var countdown;
+var tempoRimasto = tempoDomanda;
+var tempoPassato = 0;
 
-function startTimer(){
-  setInterval(function() {
-    /*countdown = --countdown <= 0 ? 30 : countdown;*/
-    if(--countdown<=0 || controllo)
-    {
-      if(controllo)
-      {
-        let myRules = document.styleSheets[0].cssRules;
-        let keyframes = myRules[0]; 
-        console.log(keyframes);
-        keyframes.deleteRule('to');
-        console.log(keyframes.cssRules); 
+function calculateTimeFraction() {
+  return tempoRimasto / tempoDomanda;
+}
 
-         myRules = document.styleSheets[0].cssRules;
-         keyframes = myRules[0];
-        keyframes.appendRule('to {stroke-dashoffset: 157px;}');
-        console.log(keyframes.cssRules);
-      }
-      countdown=30;
-      controllo=false;
-      newDomanda();
-    }
-    else{
-      countdown=countdown;
-    }
-    countdownNumberEl.textContent = countdown;
+function setCircleDasharray() {
+  const circleDasharray = `${(
+    calculateTimeFraction() * FULL_DASH_ARRAY
+  ).toFixed(0)} 283`;
+  document
+    .getElementById("base-timer-path-remaining")
+    .setAttribute("stroke-dasharray", circleDasharray);
+}
+
+function contoAllaRovescia() {
+  intertempo = tempoDomanda;
+  countdown = setInterval(function () {
+    tempoPassato++;
+    tempoRimasto = tempoDomanda - tempoPassato;
+    intertempo--;
+    setCircleDasharray();
+    valutaTempo(intertempo);
+    document.getElementById("contatore").innerHTML = intertempo;
   }, 1000);
 }
+
+function valutaTempo(secondi) {
+  if (secondi < 0) {
+    secondi = 0;
+    clearInterval(countdown);
+    if (serieDomandeCasuali.length == 0) {
+      goToResults();
+    }
+    //questionNumber++;
+    newDomanda();
+    contoAllaRovescia();
+    intertempo = tempoDomanda;
+    tempoRimasto = tempoDomanda;
+    tempoPassato = 0;
+  }
+}
+
+// var countdownNumberEl = document.getElementById('countdown-number');
+// var countdown = 30;
+
+// countdownNumberEl.textContent = countdown;
+
+// function startTimer(){
+//   setInterval(function() {
+//     /*countdown = --countdown <= 0 ? 30 : countdown;*/
+//     if(--countdown<=0 || controllo)
+//     {
+//       countdown=30;
+//       controllo=false;
+//       newDomanda();
+//     }
+//     else{
+//       countdown=countdown;
+//     }
+//     countdownNumberEl.textContent = countdown;
+//   }, 1000);
+// }
 
 

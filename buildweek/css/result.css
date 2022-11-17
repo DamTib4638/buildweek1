@@ -24,14 +24,22 @@ h2 {
 p{
     font-size: 1.5rem;
 }
+
 .container{
+    display: flex;
+    text-align: center;
+    margin-bottom: 4em;
+    justify-content: space-between;
+}
+
+/* .container{
     display: grid;
     grid-template-columns:auto auto auto;
     max-width: auto;
     margin-top: 150px;
     text-align: center;
     margin-bottom: 100px;
-}
+} */
 a{
     text-decoration: none;
     color: white;
@@ -52,19 +60,9 @@ h3{
 }
 /*grafico*/
 .contenitore-grafico{
-    height: 700px;
-    width: 450px;
-    margin: 0 auto;
+    height: 300px;
+    width: 300px;
 
 }
-#span-canvas{
-    margin: 0 auto;
-    position: relative;
-    top: 180px;
-    max-width: 150px;
-}
-/*
-.contenitore-grafico::before{
-  
-}
-*/
+
+

@@ -1,21 +1,26 @@
 var giuste = JSON.parse(window.localStorage.getItem('rights'))
 var sbagliate = JSON.parse(window.localStorage.getItem('wrongs'))
+var totaleDomande = JSON.parse(window.localStorage.getItem('total'));
+console.log(totaleDomande);
 
 let rightsPercentuale = document.querySelector('#domande-corrette #a')
 let wrongsPercentuale = document.querySelector('.domande-sbagliate #a')
 let rightsNum = document.querySelector('#domande-corrette #b')
 let wrongsNum = document.querySelector('.domande-sbagliate #b')
 
-rightsPercentuale.textContent = (giuste*10) + '%'
-wrongsPercentuale.textContent = (sbagliate*10) + '%'
-rightsNum.textContent = `${giuste} su 10` 
-wrongsNum.textContent = `${sbagliate} su 10`
+var percentualeCorretta = (giuste/totaleDomande)*100;
+var percentualeSbagliata = (sbagliate/totaleDomande)*100;
+
+rightsPercentuale.textContent = percentualeCorretta + '%'
+wrongsPercentuale.textContent = percentualeSbagliata + '%'
+rightsNum.textContent = `${giuste} / ${totaleDomande}` 
+wrongsNum.textContent = `${sbagliate} / ${totaleDomande}`
 
 
   const data = {
         labels: [
-        'Sbagliate',
-        'Giuste'
+        'WRONG',
+        'CORRECT'
         ],
         datasets: [{
         label: 'domande',
@@ -24,7 +29,13 @@ wrongsNum.textContent = `${sbagliate} su 10`
             '#D20094',
             '#00FFFF'
         ],
-        hoverOffset: 4
+        hoverOffset: 4,
+        borderColor: "inherit",
+        borderWidth: "0.1",
+        hoverBorderColor: "#000000",
+        hoverBorderWidth: 0.1,
+        hoverOffset: 0.1,
+        cutout: '70%',
         }]
   };
 
@@ -37,17 +48,10 @@ wrongsNum.textContent = `${sbagliate} su 10`
   
   new Chart(ctx,{
     type: 'doughnut',
-    data: data,
+  data: data,
     options: {
-      elements:{
-        center:{
-          text:'ciao proviamo',
-          color: '#FF6384'
-        }
-      },
-        cutout:150,
+        cutout:140,
         responsive: true,
-        borderColor:'transparent',
         plugins: {
         legend: {
             position: 'top',
@@ -56,38 +60,18 @@ wrongsNum.textContent = `${sbagliate} su 10`
         title: {
             display: false,
             text: 'Chart.js Doughnut Chart'
-        },
-        doughnutlabel: {
-          labels: [
-            {
-              text: '550',
-              font: {
-                size: 20,
-                weight: 'bold',
-              },
-            }
-          ]
         }
-        },
+        }
     },
-    centerText:{
-      display:true,
-      text:'prova'
-    }
 
-  }
-  );
+  });
 
-
-  var canvas=document.querySelector('#span-canvas');
-  
-  if(giuste>=6)
-  {
-
-
-  canvas.innerHTML="<h5>Congratulations!</h5> <h6>You passed the exam.</h6> We'll send you the certificate in a few minutes. Check your email (including promotions / spam folder)"
-  }
-  else{
-    canvas.innerHTML="ritenta,sarai più fortunato"
-  }
-
+var principale = document.getElementById('principale');
+var secondario = document.getElementById('secondario');
+if (percentualeCorretta >= 60) {
+  principale.textContent = 'Congratulations You passed the exam!';
+  secondario.textContent = `We'll send you the certificate in few minutes.Check your email (including promotions / spam folder)`;
+} else {
+  principale.textContent = 'Non hai raggiunto la sufficienza!';
+  secondario.textContent = `RIvedi le slide e le lezioni registrate in piattaforma`;
+}
