@@ -1,6 +1,5 @@
 let contenitore = document.querySelector('#stelleDiv')
 let active = -1
-let controllo = true
 
 for (let i = 0; i < 10; i++) {
     let starImg = document.createElement('img')
@@ -11,12 +10,10 @@ for (let i = 0; i < 10; i++) {
     starImg.addEventListener('mouseover', () =>onStarHover(i))
     starImg.addEventListener('mouseleave', () =>onStarOut())
     starImg.addEventListener('click', () => {
-        if(controllo){
+        if(i != active){
             onStarClick(i)
-            //controllo = false
-        } else{
+        } else {
             offStar()
-            controllo = true
         }    
     })
 }
@@ -43,9 +40,6 @@ let stars = document.querySelectorAll(".star-style")
     }
 
     function onStarClick(a) {
-        if (a == 0 && active == 0) {
-            controllo = false
-        }
         active = a
         fill(active)
     }
