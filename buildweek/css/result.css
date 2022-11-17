@@ -69,11 +69,10 @@ h3{
     margin: 0 auto;
 }
 #contenitore-esito{
-    position: absolute;
-    z-index: 1;
-    right: 40vw;
-    left: 43vw;
-    top: 44vh;
+    position: relative;
+    z-index: 100;
+    bottom: 260px;
+    left: 75px;
 }
 
 div #principale{
