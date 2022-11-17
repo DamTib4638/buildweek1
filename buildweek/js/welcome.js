@@ -218,7 +218,7 @@ domanda.textContent = questions[domandaCorrente].question;
 questionNumber++;
 let footer = document.getElementById('domande');
 spanFooter.setAttribute('id', 'span-footer');
-spanFooter.textContent = questionNumber + ' / ' + raccoltaDomande;
+spanFooter.innerHTML =`${questionNumber}  <span id="span-viola"> / ${raccoltaDomande}</span>` ;
 footer.append(spanFooter);
 }
 

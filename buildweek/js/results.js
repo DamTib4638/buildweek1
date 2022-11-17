@@ -67,11 +67,14 @@ wrongsNum.textContent = `${sbagliate} / ${totaleDomande} questions`
   });
 
 var principale = document.getElementById('principale');
+var principale2=document.getElementById('principale-bis');
 var secondario = document.getElementById('secondario');
 if (percentualeCorretta >= 60) {
-  principale.textContent = 'Congratulations You passed the exam!';
+  principale.innerHTML = 'Congratulations!';
+  principale2.innerHTML='You passed the exam!';
   secondario.innerHTML = "We'll send you the certificate in few minutes.<br> Check your email (including promotions / spam folder)";
 } else {
-  principale.textContent = 'Non hai raggiunto la sufficienza!';
-  secondario.textContent = `RIvedi le slide e le lezioni registrate in piattaforma`;
+  principale.textContent = 'Peccato!';
+  principale2.innerHTML='Non hai superato il test!';
+  secondario.textContent = "Ritenta il test per ottenere il certificato";
 }
