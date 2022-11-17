@@ -13,7 +13,7 @@ for (let i = 0; i < 10; i++) {
     starImg.addEventListener('click', () => {
         if(controllo){
             onStarClick(i)
-            controllo = false
+            //controllo = false
         } else{
             offStar()
             controllo = true
@@ -43,6 +43,9 @@ let stars = document.querySelectorAll(".star-style")
     }
 
     function onStarClick(a) {
+        if (a == 0 && active == 0) {
+            controllo = false
+        }
         active = a
         fill(active)
     }
