@@ -88,4 +88,22 @@ width: 200px;
 text-align: center;
 }
 
+#domande-corrette #a{
+    font-weight: 700;
+    font-size:50px;
+    margin-bottom: -30px;
+    margin-top: -55px;
+}
+
+.domande-sbagliate #a{
+    font-weight: 700;
+    font-size:50px;
+    margin-bottom: -30px;
+    margin-top: -55px;
+}
+footer{
+    margin-top: 25vh;
+}
+
+
 

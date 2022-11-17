@@ -13,8 +13,8 @@ var percentualeSbagliata = (sbagliate/totaleDomande)*100;
 
 rightsPercentuale.textContent = percentualeCorretta + '%'
 wrongsPercentuale.textContent = percentualeSbagliata + '%'
-rightsNum.textContent = `${giuste} / ${totaleDomande}` 
-wrongsNum.textContent = `${sbagliate} / ${totaleDomande}`
+rightsNum.textContent = `${giuste} / ${totaleDomande} questions` 
+wrongsNum.textContent = `${sbagliate} / ${totaleDomande} questions`
 
 
   const data = {
