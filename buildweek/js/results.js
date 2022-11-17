@@ -37,10 +37,17 @@ wrongsNum.textContent = `${sbagliate} su 10`
   
   new Chart(ctx,{
     type: 'doughnut',
-  data: data,
+    data: data,
     options: {
-        cutout:140,
+      elements:{
+        center:{
+          text:'ciao proviamo',
+          color: '#FF6384'
+        }
+      },
+        cutout:150,
         responsive: true,
+        borderColor:'transparent',
         plugins: {
         legend: {
             position: 'top',
@@ -49,9 +56,38 @@ wrongsNum.textContent = `${sbagliate} su 10`
         title: {
             display: false,
             text: 'Chart.js Doughnut Chart'
+        },
+        doughnutlabel: {
+          labels: [
+            {
+              text: '550',
+              font: {
+                size: 20,
+                weight: 'bold',
+              },
+            }
+          ]
         }
-        }
+        },
     },
+    centerText:{
+      display:true,
+      text:'prova'
+    }
 
-  });
+  }
+  );
+
+
+  var canvas=document.querySelector('#span-canvas');
+  
+  if(giuste>=6)
+  {
+
+
+  canvas.innerHTML="<h5>Congratulations!</h5> <h6>You passed the exam.</h6> We'll send you the certificate in a few minutes. Check your email (including promotions / spam folder)"
+  }
+  else{
+    canvas.innerHTML="ritenta,sarai più fortunato"
+  }
 
