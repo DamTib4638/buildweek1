@@ -120,6 +120,7 @@ link.setAttribute('href', 'benchmark.html');
 
 window.onload = function () {
 newDomanda();
+startTimer();
 }
 
 function sequenzaDomande(numeroDomande) {
@@ -246,19 +247,19 @@ if (response === questions[traccia].correct_answer) {
     goToResults();
   } else {
     controllo=true;
-    window.localStorage.setItem('rights', JSON.stringify((score)));
-    window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
+    //window.localStorage.setItem('rights', JSON.stringify((score)));
+    //window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
 
-    newDomanda();
+    startTimer();
   }
 } else {
   if (serieDomandeCasuali.length === 0) {
     goToResults();
   } else {
     controllo=true;
-    window.localStorage.setItem('rights', JSON.stringify((score)));
-    window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
-    newDomanda();
+    //window.localStorage.setItem('rights', JSON.stringify((score)));
+    //window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
+    startTimer();
   }
 }
 }
@@ -288,5 +289,5 @@ function startTimer(){
     countdownNumberEl.textContent = countdown;
   }, 1000);
 }
-startTimer();
+
 
