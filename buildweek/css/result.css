@@ -10,16 +10,18 @@ h1{
     padding: 0;
     font-weight: 700;
     margin-bottom: -10px;
+    font-size: 50px;
+    margin-top: 20px;
 }
 
 h2 {
     color: white;
     font-weight: 400;
     padding-top: 0;
+    margin-bottom: 0;
 }
 .centro{
     text-align: center;
-    margin-top: 5px;
     margin-bottom: 50px;
 }
 p{
@@ -29,7 +31,7 @@ p{
 .container-torta{
     display: flex;
     text-align: center;
-    margin-bottom: 4em;
+    margin-bottom: 3em;
     justify-content: space-between;
     z-index: 1;
 }
