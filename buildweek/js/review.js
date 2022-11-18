@@ -48,3 +48,13 @@ let stars = document.querySelectorAll(".star-style")
         active = - 10
         fill(active)
     }
+
+    function daiVoto() {
+        let linkFinale = document.getElementById('link-finale');
+        if (active != -1 && active != -10) {
+            linkFinale.setAttribute('href', 'https://www.epicode.com');
+        } else {
+            linkFinale.setAttribute('href', '#');
+            alert('Dai un Feedback per proseguire');
+        }
+    }
