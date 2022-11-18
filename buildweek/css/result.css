@@ -4,6 +4,7 @@ body, html{
   
     font-family: 'Inter', sans-serif;
     font-weight: 400;
+    color: rgba(255, 255, 255, 0.920);
 }
 
 h1{
@@ -46,11 +47,11 @@ p{
 } */
 a{
     text-decoration: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.920);
 }
 .button{
 width: 150px;
-border: 1px solid white;
+border: 1px solid rgba(255, 255, 255, 0.920);
 text-align: center; 
 padding-top: 10px;
 padding-bottom: 10px;
@@ -118,7 +119,7 @@ footer{
 }
 .button{
     background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.920);
     box-shadow: 0 0 3px #00FFFF;
     padding: 14px 20px;
     cursor: pointer;
@@ -130,10 +131,12 @@ footer{
 #domande-corrette{
     margin-top: 50px;
     text-align: left;
+    color: white;
 }
 .domande-sbagliate{
     margin-top: 50px;
     text-align: right;
+    color: rgba(255, 255, 255, 0.820);
 }
 
 
