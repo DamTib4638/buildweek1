@@ -1,7 +1,6 @@
 var giuste = JSON.parse(window.localStorage.getItem('rights'))
 var sbagliate = JSON.parse(window.localStorage.getItem('wrongs'))
 var totaleDomande = JSON.parse(window.localStorage.getItem('total'));
-console.log(totaleDomande);
 
 let rightsPercentuale = document.querySelector('#domande-corrette #a')
 let wrongsPercentuale = document.querySelector('.domande-sbagliate #a')

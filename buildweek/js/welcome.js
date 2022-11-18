@@ -107,7 +107,6 @@ var percentualeRisposteSbagliate = 0; // serve in futuro per le percentuali dei 
 var traccia = -1;
 var spanFooter = document.createElement('span');
 const FULL_DASH_ARRAY = 283;
-//var controllo=false;
 
 
 function checkBox(){
@@ -180,37 +179,12 @@ if(questions[domandaCorrente].type == 'multiple') {
   label4.textContent = risposte[seqRisArr[3]];
   document.getElementById('div-risp-3').style.display = 'inline-block';
   document.getElementById('div-risp-4').style.display = 'inline-block';
-  //for (let i=0; i<4; i++) {
-    // let option = document.createElement('div');
-    // option.classList.add('item');
-    // option.setAttribute('id', 'div-risp-'+(i+1));
-    // if (!label) {
-    //   label = document.createElement('label');
-    // }
-    //label = document.createElement('label');
-    
-    //label.setAttribute('id', 'lab-risp-'+(i+1));
-    //option.append(label);
-    //container[i].append(label);
-  //}
 } else {
   let label1 = document.getElementById('lab-risp-1');
   label1.textContent = risposte[0];
   let label2 = document.getElementById('lab-risp-2');
   label2.textContent = risposte[1];
-  //for (let i=0; i<2; i++) {
-    // let option = document.createElement('div');
-    // option.classList.add('item');
-    // option.setAttribute('id', 'div-risp-'+(i+1));
-    // if (!label) {
-    //   label = document.createElement('label');
-    // }
-    //let label = document.createElement('label');
-    //label.textContent = risposte[i];
-    //label.setAttribute('id', 'lab-risp-'+(i+1));
-    //option.append(label);
-    //container[i].append(label);
-  //}
+
   document.getElementById('div-risp-3').style.display = 'none';
   document.getElementById('div-risp-4').style.display = 'none';
 }
@@ -246,32 +220,12 @@ esaminaRisposta(content);
 function esaminaRisposta(response) {
   if (response === questions[traccia].correct_answer) {
     score++;
-    // if (serieDomandeCasuali.length === 0) {
-    //   goToResults();
-    // } else {
-    //   //controllo=true;
-    //   //window.localStorage.setItem('rights', JSON.stringify((score)));
-    //   //window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
-    //   newDomanda();
-    //   //startTimer();
-    // }
   }
   if (serieDomandeCasuali.length === 0) {
     goToResults();
   } else {
     newDomanda();
   }
-  // else {
-  //   if (serieDomandeCasuali.length === 0) {
-  //     goToResults();
-  //   } else {
-  //     //controllo=true;
-  //     //window.localStorage.setItem('rights', JSON.stringify((score)));
-  //     //window.localStorage.setItem('wrongs', JSON.stringify((raccoltaDomande - score)));
-  //     newDomanda();
-  //     //startTimer();
-  //   }
-  // }
   clearInterval(countdown);
   contoAllaRovescia();
   intertempo = tempoDomanda;
@@ -326,7 +280,6 @@ function valutaTempo(secondi) {
     if (serieDomandeCasuali.length == 0) {
       goToResults();
     }
-    //questionNumber++;
     newDomanda();
     contoAllaRovescia();
     intertempo = tempoDomanda;
@@ -334,26 +287,3 @@ function valutaTempo(secondi) {
     tempoPassato = 0;
   }
 }
-
-// var countdownNumberEl = document.getElementById('countdown-number');
-// var countdown = 30;
-
-// countdownNumberEl.textContent = countdown;
-
-// function startTimer(){
-//   setInterval(function() {
-//     /*countdown = --countdown <= 0 ? 30 : countdown;*/
-//     if(--countdown<=0 || controllo)
-//     {
-//       countdown=30;
-//       controllo=false;
-//       newDomanda();
-//     }
-//     else{
-//       countdown=countdown;
-//     }
-//     countdownNumberEl.textContent = countdown;
-//   }, 1000);
-// }
-
-
