@@ -121,6 +121,7 @@ footer{
     border: 2px solid white;
     box-shadow: 0 0 3px #00FFFF;
     padding: 14px 20px;
+    cursor: pointer;
 }
 .button a{
     font-weight: 700;

@@ -8,8 +8,8 @@ let wrongsPercentuale = document.querySelector('.domande-sbagliate #a')
 let rightsNum = document.querySelector('#domande-corrette #b')
 let wrongsNum = document.querySelector('.domande-sbagliate #b')
 
-var percentualeCorretta = (giuste/totaleDomande)*100;
-var percentualeSbagliata = (sbagliate/totaleDomande)*100;
+var percentualeCorretta = ((giuste/totaleDomande)*100).toFixed(1);
+var percentualeSbagliata = ((sbagliate/totaleDomande)*100).toFixed(1);
 
 rightsPercentuale.textContent = percentualeCorretta + '%'
 wrongsPercentuale.textContent = percentualeSbagliata + '%'
