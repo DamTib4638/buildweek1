@@ -3,6 +3,18 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
+    question: "How many values can a single byte represent?",
+    correct_answer: "256",
+    incorrect_answers: [
+      "8",
+      "1",
+      "1024"
+    ]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
     question: "What does CPU stand for?",
     correct_answer: "Central Processing Unit",
     incorrect_answers: [
